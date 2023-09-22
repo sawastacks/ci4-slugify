@@ -1,0 +1,31 @@
+{
+    "name": "mberecall/ci4-slugify",
+    "description": "Simple Slugify Library for Codeigniter",
+    "type": "library",
+    "keywords": [
+        "codeigniter4",
+        "codeigniter",
+        "slugify",
+        "sluggable"
+    ],
+    "license": "MIT",
+    "authors": [{
+        "name": "MB'DUSENGE Callixte (mberecall)",
+        "homepage": "https://github.com/mberecall/ci4-slugify"
+    }],
+    "require": {
+        "php": "^7.2 || ^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.3",
+        "friendsofphp/php-cs-fixer": "^2.16"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mberecall\\CI_Libraries\\": "src/"
+        },
+        "files": [
+            "src/lib/ci_slugify.php"
+        ]
+    }
+}
