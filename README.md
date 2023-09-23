@@ -1,6 +1,6 @@
 <p align="center">
 
-<img src="https://img.shields.io/packagist/v/mberecall/ci4-slugify" alt="Latest Stable Version">  <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/mberecall/ci4-slugify"> <a href="https://packagist.org/packages/mberecall/ci4-slugify"><img src="https://img.shields.io/packagist/dt/mberecall/ci4-slugify" alt="Total Downloads"></a>  [![Package License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE) [![Buy me a coffee](https://img.shields.io/static/v1.svg?label=Buy%20me%20a%20coffee&message=💖&color=black&logo=buy%20me%20a%20coffee&logoColor=white&labelColor=6f4e37)](https://www.ko-fi.com/mberecall)
+<img src="https://img.shields.io/packagist/v/mberecall/ci4-slugify" alt="Latest Stable Version">  <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/mberecall/ci4-slugify"> <a href="https://packagist.org/packages/mberecall/ci4-slugify"><img src="https://img.shields.io/packagist/dt/mberecall/ci4-slugify" alt="Total Downloads"></a>  [![Package License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE) [![Buy me a coffee](https://img.shields.io/static/v1.svg?label=Buy%20me%20a%20coffee&message=🧡&color=black&logo=buy%20me%20a%20coffee&logoColor=white&labelColor=6f4e37)](https://www.ko-fi.com/mberecall)
 
 
 </p>
