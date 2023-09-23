@@ -22,10 +22,10 @@
     },
     "autoload": {
         "psr-4": {
-            "Mberecall\\CI_Libraries\\": "src/"
+            "Mberecall\\Sluggable\\": "src/main/"
         },
         "files": [
-            "src/lib/ci_slugify.php"
+            "src/lib/CI_SlugifyHelper.php"
         ]
     }
 }
