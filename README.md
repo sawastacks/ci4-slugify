@@ -16,7 +16,7 @@ Contents
 
 # Simple Slugify Library for Codeigniter 4
 
-This library provides a way of generating a unique slugs.
+This library provides a way of generating a unique slugs🇷🇼.
 
 <p align="center">  
 
