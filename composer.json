@@ -8,6 +8,7 @@
         "codeigniter",
         "slugify",
         "ci4 slugify",
+        "slug",
         "sluggable"
     ],
     "license": "MIT",
