@@ -1,16 +1,7 @@
 <p align="center">
 
-![GitHub release](https://img.shields.io/github/v/release/mberecall/ci4-slugify) <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/mberecall/ci4-slugify"> [![Total Downloads](https://poser.pugx.org/mberecall/ci4-slugify/downloads)](https://packagist.org/packages/mberecall/ci4-slugify) [![Package License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE)
-[![Buy me a coffee](https://img.shields.io/static/v1.svg?label=Buy%20me%20a%20coffee&message=🥨&color=black&logo=buy%20me%20a%20coffee&logoColor=white&labelColor=6f4e37)](https://www.ko-fi.com/mberecall)
-[![Total Downloads](https://poser.pugx.org/mberecall/ci4-slugify/d/total.png)](https://packagist.org/packages/mberecall/ci4-slugify)
-[![Total Downloads](https://img.shields.io/packagist/dt/mberecall/ci4-slugify.svg?style=flat-square)](https://packagist.org/packages/mberecall/ci4-slugify)
-[![Packagist Downloads](https://img.shields.io/packagist/dm/mberecall/ci4-slugify)](https://packagist.org/packages/mberecall/ci4-slugify)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mberecall/ci4-slugify/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/mberecall/ci4-slugify/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/mberecall/ci4-slugify/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/mberecall/ci4-slugify/?branch=master)
-[![Type Coverage](https://shepherd.dev/github/mberecall/ci4-slugify/coverage.svg)](https://shepherd.dev/github/mberecall/ci4-slugify)
-[![License](https://poser.pugx.org/mberecall/ci4-slugify/license.png)](https://packagist.org/packages/mberecall/ci4-slugify)
-![GitHub release](https://img.shields.io/github/v/release/mberecall/ci4-slugify)
-<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/mberecall/ci4-slugify">
+![GitHub release](https://img.shields.io/github/v/release/mberecall/ci4-slugify) <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/mberecall/ci4-slugify"> [![Package License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE) [![Buy me a coffee](https://img.shields.io/static/v1.svg?label=Buy%20me%20a%20coffee&message=🥨&color=black&logo=buy%20me%20a%20coffee&logoColor=white&labelColor=6f4e37)](https://www.ko-fi.com/mberecall) [![Packagist Downloads](https://img.shields.io/packagist/dm/mberecall/ci4-slugify)](https://packagist.org/packages/mberecall/ci4-slugify) [![Type Coverage](https://shepherd.dev/github/mberecall/ci4-slugify/coverage.svg)](https://shepherd.dev/github/mberecall/ci4-slugify)
+
 </p>
 
 Contents
