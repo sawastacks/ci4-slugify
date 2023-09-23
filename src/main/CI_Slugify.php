@@ -50,20 +50,20 @@ class CI_Slugify
      * Return the final result of generating unique slug
      * 
      * @param array $data Parameters
-     * @param string $field Name of the table field
+     * @param string $source Name of the source field on table
      * @param string $separator Symbol needed to be divider. eg: '-', '_'
      * @return string
      */
 
-    public function getSlug(array $data, string $field, string $separator = '-'): array
+    public function getSlug(array $data, string $source, string $separator = '-'): array
     {
-        if (!isset($data['data'][$field])) {
+        if (!isset($data['data'][$source])) {
             return $data;
         }
 
         $currentId = $data['id'][0] ?? -1;
 
-        $clearStr = self::latinToPlain($data['data'][$field]);
+        $clearStr = self::latinToPlain($data['data'][$source]);
 
         // $slug = \url_title($clearStr, $separator, true);
         $slug = self::slugifiying($clearStr, $separator, true);

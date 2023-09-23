@@ -88,23 +88,23 @@ class SlugService
     public static function make(string $string, string $field = 'slug', int $id = null)
     {
 
-        if (!$string || $string == null) {
+        if ( !$string || $string == null ) {
             throw new \Exception('Defining string on make() is required');
         }
 
-        if (!$field || $field == null) {
+        if ( !$field || $field == null ) {
             throw new \Exception('Defining field on make() is required');
         }
 
-        if (!self::$model && !self::$table) {
-            throw new \Exception(' "table()" or "model()" on chain is required');
+        if ( !self::$model && !self::$table ) {
+            throw new \Exception(' "table()" or "model()" method on chain is required');
         }
 
-        if (self::$model && self::$table) {
-            throw new \Exception('Only on function allowed. Choose "table()" or "model()"');
+        if ( self::$model && self::$table ) {
+            throw new \Exception('Only one function allowed on the chain. Choose "table()" or "model()"');
         }
 
-        $_separator = ( self::$separator && is_string(self::$separator)) ? self::$separator : '-';
+        $_separator = ( self::$separator && is_string(self::$separator) ) ? self::$separator : '-';
         $slug = self::latinToPlain($string);
 
         $db = \Config\Database::connect();
@@ -119,7 +119,7 @@ class SlugService
 
         if (self::$table) $_table_model = $db->table(self::$table);
 
-        if ( self::$model && is_string(self::$model)) $_table_model = new self::$model;
+        if ( self::$model && is_string(self::$model) ) $_table_model = new self::$model;
 
         return self::setSlug($_table_model, $params, $slug, $field, $_separator);
     }
@@ -141,7 +141,6 @@ class SlugService
         $i = 0;
         while ($table_model->where($params)->countAllResults()) {
             if (!preg_match('/-{1}[0-9]+$/', $slug))
-                // $slug .= '-' . ++$i;
                 $slug .= $separator . ++$i;
             else
                 $slug = preg_replace('/[0-9]+$/', ++$i, $slug);

@@ -1,6 +1,7 @@
 {
     "name": "mberecall/ci4-slugify",
     "description": "Simple Slugify Library for Codeigniter",
+    "homepage": "https://github.com/mberecall/ci4-slugify",
     "type": "library",
     "keywords": [
         "codeigniter4",
@@ -11,7 +12,7 @@
     "license": "MIT",
     "authors": [{
         "name": "MB'DUSENGE Callixte (mberecall)",
-        "homepage": "https://github.com/mberecall/ci4-slugify"
+        "homepage": "https://github.com/mberecall"
     }],
     "require": {
         "php": "^7.2 || ^8.0"
