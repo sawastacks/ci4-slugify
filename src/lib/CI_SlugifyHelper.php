@@ -1,5 +1,7 @@
 <?php
-namespace Mberecall\CI_Slugify;
+
+ namespace Mberecall\CI_Slugify;
+
 /**
  * A simple unique slugs generator for Codeigniter 4
  * Copyright (c) 2023 - present
@@ -66,6 +68,7 @@ class SlugService
      * @param string $primaryKey of the model table
      * @return object
      */
+    
     public static function model(string $name, string $primaryKey = 'id')
     {
         static::$model = $name;

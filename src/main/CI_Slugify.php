@@ -2,13 +2,25 @@
 
 namespace Mberecall\Sluggable;
 
+/**
+ * A simple unique slugs generator for Codeigniter 4
+ * Copyright (c) 2023 - present
+ * author: MB'DUSENGE Callixte - irebe.library.rw@gmail.com
+ * web : github.com/mberecall
+ * Initial version created on: 23/09/2023
+ * MIT license: https://github.com/mberecall/ci4-slugify/blob/master/LICENSE
+ */
+
 use CodeIgniter\Model;
 
 
 
 class CI_Slugify
 {
+    /** @var string */
     protected $model;
+
+    /** @var string */
     protected $slugField = 'slug';
 
     /** @var array */
@@ -23,10 +35,25 @@ class CI_Slugify
         $this->model = $model;
     }
 
-    public function setField(string $fieldName): void
+    /**
+     * Return the name of table field.
+     *
+     * @param string $fieldName Name of the table field
+     * @return object
+     */
+    public function field(string $fieldName): void
     {
         $this->slugField = $fieldName;
     }
+
+    /**
+     * Return the final result of generating unique slug
+     * 
+     * @param array $data Parameters
+     * @param string $field Name of the table field
+     * @param string $separator Symbol needed to be divider. eg: '-', '_'
+     * @return string
+     */
 
     public function getSlug(array $data, string $field, string $separator = '-'): array
     {
@@ -38,11 +65,8 @@ class CI_Slugify
 
         $clearStr = self::latinToPlain($data['data'][$field]);
 
-        // $slug = \url_title($data['data'][$field], '-', true);
-        $slug = \url_title($clearStr, $separator , true);
-
-        
-
+        // $slug = \url_title($clearStr, $separator, true);
+        $slug = self::slugifiying($clearStr, $separator, true);
 
         $entry = $this->model->where($this->slugField, $slug)->withDeleted()->first();
 
@@ -58,6 +82,19 @@ class CI_Slugify
     }
 
     /**
+     * Change the latin characters to plain characters
+     * 
+     * @param string $string Given title or String value
+     * @param string $separator Divider symbol. eg: '-' or '_'
+     * @param bool $lowercaseEnabled Allow generated slug to be in lowercase
+     * @return string
+     */
+    public static function slugifiying(string $string, string $separator, bool $lowercaseEnabled = true)
+    {
+        return \url_title($string, $separator, $lowercaseEnabled);
+    }
+
+     /**
      * Change the latin characters to plain characters
      * 
      * @param string $string
