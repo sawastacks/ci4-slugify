@@ -77,7 +77,7 @@ class SlugService
     }
 
      /**
-     * Return the final result of generating unique slug
+     * Return final result of generating unique slug
      *
      * @param string $string String value from title or other text
      * @param string $field field name of the given table
