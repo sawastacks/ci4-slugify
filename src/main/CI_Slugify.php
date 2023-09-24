@@ -65,7 +65,6 @@ class CI_Slugify
 
         $clearStr = self::latinToPlain($data['data'][$source]);
 
-        // $slug = \url_title($clearStr, $separator, true);
         $slug = self::slugifiying($clearStr, $separator, true);
 
         $entry = $this->model->where($this->slugField, $slug)->withDeleted()->first();
