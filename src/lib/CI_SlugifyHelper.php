@@ -151,7 +151,7 @@ class SlugService
     }
 
     /**
-     * Defining the separator symbol 
+     * Defining the separator/divider symbol 
      * Example: '-', '_' .The default symbol is '-'. 
      * 
      * @param string $string
