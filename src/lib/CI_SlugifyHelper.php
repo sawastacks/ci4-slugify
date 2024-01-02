@@ -9,6 +9,7 @@ namespace Mberecall\CI_Slugify;
  * web : github.com/mberecall
  * Initial version created on: 23/09/2023
  * MIT license: https://github.com/mberecall/ci4-slugify/blob/master/LICENSE
+ * 
  */
 
 class SlugService
@@ -118,52 +119,30 @@ class SlugService
         $params[$field] = $slug;
         $prm_ky = self::$primaryKey;
 
-        if ($id) $params["$prm_ky !="] = $id;
-
         if (self::$table) $_table_model = $db->table(self::$table);
 
         if ( self::$model && is_string(self::$model) ) $_table_model = new self::$model;
 
         $sid = ( self::$updateTo && is_int(self::$updateTo) ) ? self::$updateTo : '';
-         
-        return self::setSlug($_table_model, $params, $slug, $field, $_separator,$sid);
+     
+        return self::check_slug($_table_model, $field, $slug, $params, $_separator, $sid);
+    }
+
+    private static function check_slug($model, $field, $slug, $params, $separator, $id, $count = 0){
         
-    }
-
-    /**
-     * Return the result of generated slug if the similar
-     * founded in table
-     *
-     * @param object $table_model Model object or table name
-     * @param array $params Parameters
-     * @param string $slug Generated slug
-     * @param string $field Table field
-     * @param string $separator Symbol needed to be used eg: '-' or '_'
-     * @return string
-     */
-
-     private static function setSlug(object $table_model, array $params, string $slug, string $field, string $separator, $id = '')
-    {
-        return self::check_uri($slug, $id, $count = 0, $separator, $table_model, $params, $field);
-    }
-
-    private static function check_uri($slug, $id = FALSE, $count = 0, $separator, $table_model, $params, $field)
-	{ 
-		$new_slug = ($count > 0) ? $slug . $separator . $count : $slug;
+        $new_slug = ($count > 0) ? $slug . $separator . $count : $slug;
         $pk = self::$primaryKey;
- 
-        $query = $table_model->where($field,$new_slug);
+        $query = $model->where($field,$new_slug);
 
-		if( $id != null && is_int($id) ){
-            $query->where($pk . ' !=', $id);
+        if( $id != null && is_int($id) ){
+            $query->where($pk . '!=', $id);
 		}
-
         if( $query->countAllResults() > 0 ){
-            return self::check_uri($slug, $id, ++$count, $separator, $table_model, $params, $field);
+            return self::check_slug($model, $field, $slug, $params, $separator, $id, ++$count);
         }else{
             return $new_slug;
         }
-	}
+    }
 
     /**
      * Defining the separator/divider symbol 
@@ -190,13 +169,7 @@ class SlugService
     }
 
      
-    /**
-     * sid
-     *
-     * @param  mixed $id
-     * @return void Return spacific column id
-     */
-    public static function sid($id){
+    public static function sid(int $id){
         static::$updateTo = $id;
         return static::getself();
     }   
