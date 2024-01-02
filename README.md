@@ -19,9 +19,12 @@ Contents
 
 This library provides a way of generating a unique slugs.
 
-<p align="center">  
+<p align="centerx">  
 
- [![Hello World](img/ko-fi.png)](https://ko-fi.com/mberecall)
+ <!-- [![Hello World](img/ko-fi.png)](https://ko-fi.com/mberecall) -->
+ <a href="" target="_blank">
+ <img src="img/ko-fi.png" alt="drawing" style="width:200px;"/>
+ </a>
 
  </p>
 
