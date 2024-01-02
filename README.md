@@ -79,10 +79,10 @@ composer require mberecall/ci4-slugify
 
 ## Usage
 
-After package installed in your Codeigniter project, you have two ways you will use to generate a unique slugs for your blog posts or products. One way, is to use `CI_Slugify` class inside model. This means that you will need to update your model. The second way, you will use SlugService Class inside your controller.
+After package installed in your Codeigniter project, you have now many ways you will use to generate a unique slugs for your blog posts or products. Just follow the following guides below that will teach the way you will use SlugService Class inside your controller.
 
 
-### The SlugService Class 
+### SlugService Class 
 All the logic to generate slugs is handled
 by the `Mberecall\CI_Slugify\SlugService` class.
 
