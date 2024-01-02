@@ -25,8 +25,9 @@
         "friendsofphp/php-cs-fixer": "^2.16"
     },
     "autoload": {
-        "psr-4": {
-            "Mberecall\\CI_Slugify\\": "src/main/"
-        }
+        
+        "files": [
+            "src/lib/CI_SlugifyHelper.php"
+        ]
     }
 }

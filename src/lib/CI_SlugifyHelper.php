@@ -1,11 +1,11 @@
 <?php
 
- namespace Mberecall\CI_Slugify;
+namespace Mberecall\CI_Slugify;
 
 /**
  * A simple unique slugs generator for Codeigniter 4
  * Copyright (c) 2023 - present
- * author: MB'DUSENGE Callixte - irebe.library.rw@gmail.com
+ * author: MB'DUSENGE Callixte
  * web : github.com/mberecall
  * Initial version created on: 23/09/2023
  * MIT license: https://github.com/mberecall/ci4-slugify/blob/master/LICENSE
@@ -27,6 +27,9 @@ class SlugService
 
      /** @var string */
     protected static $onlyInstance;
+
+     /** @var int */
+     protected static $updateTo;
 
     /** @var array */
     protected static $latin = array('á', 'é', 'í', 'ó', 'ú', 'ñ', 'ç', 'ü', 'à', 'è', 'ì', 'ò', 'ù', 'Á', 'É', 'Í', 'Ó', 'Ú', 'Ñ', 'Ç', 'Ü', 'À', 'È', 'Ì', 'Ò', 'Ù');
@@ -103,14 +106,14 @@ class SlugService
         if ( self::$model && self::$table ) {
             throw new \Exception('Only one function allowed on the chain. Choose "table()" or "model()"');
         }
-
+        $db = \Config\Database::connect();
         $_separator = ( self::$separator && is_string(self::$separator) ) ? self::$separator : '-';
         $slug = self::latinToPlain($string);
-
-        $db = \Config\Database::connect();
+       
         $_table_model = null;
-        $slug = url_title($slug, $_separator, true);
-        $slug = strtolower($slug);
+        $slug = strtolower(url_title(convert_accented_characters($slug), $_separator));
+		$slug =  reduce_multiples($slug,$_separator, TRUE);
+
         $params = array();
         $params[$field] = $slug;
         $prm_ky = self::$primaryKey;
@@ -121,7 +124,10 @@ class SlugService
 
         if ( self::$model && is_string(self::$model) ) $_table_model = new self::$model;
 
-        return self::setSlug($_table_model, $params, $slug, $field, $_separator);
+        $sid = ( self::$updateTo && is_int(self::$updateTo) ) ? self::$updateTo : '';
+         
+        return self::setSlug($_table_model, $params, $slug, $field, $_separator,$sid);
+        
     }
 
     /**
@@ -136,19 +142,28 @@ class SlugService
      * @return string
      */
 
-    public static function setSlug(object $table_model, array $params, string $slug, string $field, string $separator)
+     private static function setSlug(object $table_model, array $params, string $slug, string $field, string $separator, $id = '')
     {
-        $i = 0;
-        while ( $table_model->where($params)->countAllResults() ) {
-            if (!preg_match('/-{1}[0-9]+$/', $slug))
-                $slug .= $separator . ++$i;
-            else
-                $slug = preg_replace('/[0-9]+$/', ++$i, $slug);
-
-            $params[$field] = $slug;
-        }
-        return $slug;
+        return self::check_uri($slug, $id, $count = 0, $separator, $table_model, $params, $field);
     }
+
+    private static function check_uri($slug, $id = FALSE, $count = 0, $separator, $table_model, $params, $field)
+	{ 
+		$new_slug = ($count > 0) ? $slug . $separator . $count : $slug;
+        $pk = self::$primaryKey;
+ 
+        $query = $table_model->where($field,$new_slug);
+
+		if( $id != null && is_int($id) ){
+            $query->where($pk . ' !=', $id);
+		}
+
+        if( $query->countAllResults() > 0 ){
+            return self::check_uri($slug, $id, ++$count, $separator, $table_model, $params, $field);
+        }else{
+            return $new_slug;
+        }
+	}
 
     /**
      * Defining the separator/divider symbol 
@@ -169,8 +184,20 @@ class SlugService
      * @param string $string
      * @return string
      */ 
-    public static function latinToPlain(string $string)
+    private static function latinToPlain(string $string)
     {
         return str_replace(self::$latin, self::$plain, $string);
     }
+
+     
+    /**
+     * sid
+     *
+     * @param  mixed $id
+     * @return void Return spacific column id
+     */
+    public static function sid($id){
+        static::$updateTo = $id;
+        return static::getself();
+    }   
 }
