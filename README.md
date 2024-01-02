@@ -18,7 +18,7 @@ This library provides a way of generating a unique slugs.
 
 <p align="centerx">  
  <a href="https://www.buymeacoffee.com/mberecall" target="_blank">
-   <img src="img/ko-fi.png" alt="drawing" style="width:200px;"/>
+   <img src="img/bmc.png" alt="drawing" style="width:200px;"/>
  </a>
 </p>
 
