@@ -26,10 +26,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Mberecall\\Sluggable\\": "src/main/"
-        },
-        "files": [
-            "src/lib/CI_SlugifyHelper.php"
-        ]
+            "Mberecall\\CI_Slugify\\": "src/main/"
+        }
     }
 }

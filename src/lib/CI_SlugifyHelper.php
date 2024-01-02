@@ -139,7 +139,7 @@ class SlugService
     public static function setSlug(object $table_model, array $params, string $slug, string $field, string $separator)
     {
         $i = 0;
-        while ($table_model->where($params)->countAllResults()) {
+        while ( $table_model->where($params)->countAllResults() ) {
             if (!preg_match('/-{1}[0-9]+$/', $slug))
                 $slug .= $separator . ++$i;
             else
