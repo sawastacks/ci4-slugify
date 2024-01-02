@@ -81,68 +81,8 @@ composer require mberecall/ci4-slugify
 
 After package installed in your Codeigniter project, you have two ways you will use to generate a unique slugs for your blog posts or products. One way, is to use `CI_Slugify` class inside model. This means that you will need to update your model. The second way, you will use SlugService Class inside your controller.
 
-### [1] Update modal
 
-`CI_Slugify` is intended to be used from a Model as it requires one. Here is an example of the default usage:
-
-```php
-<?php
-
-namespace App\Models;
-
-use CodeIgniter\Model;
-use \Mberecall\Sluggable\CI_Slugify;
-
-class Post extends Model
-{
-    protected $table = 'posts';
-    protected $allowedFields = ['title', 'content'];
-
-    // Callbacks
-    protected $beforeInsert = ['setSlug'];
-    protected $beforeUpdate = ['setSlug'];
-
-     public function setSlug($data)
-     {
-        $slugify = new CI_Slugify($this);
-        // $slugify->field('slug_field'); // default: `slug`
-        $data = $slugify->getSlug($data,'title');
-        return $data;
-    }
-}
-```
-`NB:` If you use a slug field that is not called `slug`, you can call `$slugify->field('your_slug_field_name')` to change the default behaviour.
-
-This code will look for the `title` value of the incomming data as source and calculate the corresponding `slug`. If a database entry already has that given `slug`, it will increment the slug with a `-N` suffix. For instance: `hello-world` becomes `hello-world-2`, which becomes `hello-world-3`, and so on until a free `slug` is found.
-
-In your controller, no need to add a slug field on the array when you are inserting data into database. See the example below:
-
-```php
-<?php
-
-namespace App\Controllers;
-
-use App\Controllers\BaseController;
-use App\Models\Post;
-
-class TestController extends BaseController
-{
-    public function index(){
-        $post = new Post();
-        $post->save([
-            'title'=>'André & François won mathematics competion',
-            // 'slug'=>$slug  you don't need to add this on array
-        ]);
-
-        //Result: andre-francois-won-mathematics-competion
-       //         andre-francois-won-mathematics-competion-1      
-    }   
-}
-```
-
-That's it ... your model is now "sluggable"!
-
-### [2] The SlugService Class 
+### The SlugService Class 
 All the logic to generate slugs is handled
 by the `Mberecall\CI_Slugify\SlugService` class.
 
@@ -216,6 +156,32 @@ class TestController extends BaseController
 
 ```
 
+### Updating row
+when you are not inserting new record, but you're updating any selected record, you'll need to add extra function on chain `sid()`.
+```php
+<?php
+
+namespace App\Controllers;
+
+use App\Controllers\BaseController;
+use App\Models\Post;
+use \Mberecall\CI_Slugify\SlugService;
+
+class TestController extends BaseController
+{
+    public function update_post(){
+        $id = $request->getVar('post_id');
+        $post = new Post();
+        $title = 'André & François won mathematics competion';
+
+        $slug = SlugService::model(Post::class)->sid($id)->make($title);
+  
+    }
+
+}
+
+```
+
 ## Class reference
 
 ### `\Mberecall\CI_Slugify\SlugService`
@@ -229,6 +195,11 @@ class TestController extends BaseController
 
 **Arguments**
 - This method has two arguments. First argument will be the instance of the model object which is required. Where the second argument is the primary key of the modal table. eg: `model(Product::class,'pid')`. Default value of the second argument which is primary key is 'id'. This means that we suppose that the products table has id column/field in structure.
+
+#### `sid()` 
+
+**Arguments**
+- This method has one argument. This argument is required and must be an integer. eg: `sid(12)`. This number is the id of selected row.
 
 #### `separator()` 
 
