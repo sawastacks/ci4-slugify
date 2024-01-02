@@ -153,6 +153,7 @@ class TestController extends BaseController
 ```
 
 ### Updating record
+
 when you are not inserting new record, but you're updating any existing record, you'll need to add an extra function on chain which is  `sid()`. Below is an example of how you can generate new slug of selected record.
 ```php
 <?php
