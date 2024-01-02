@@ -1,6 +1,6 @@
 <p align="center">
 
-<img src="https://img.shields.io/packagist/v/mberecall/ci4-slugify" alt="Latest Stable Version">  <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/mberecall/ci4-slugify"> <a href="https://packagist.org/packages/mberecall/ci4-slugify"><img src="https://img.shields.io/packagist/dt/mberecall/ci4-slugify" alt="Total Downloads"></a>  [![Package License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE) [![Buy me a coffee](https://img.shields.io/static/v1.svg?label=Buy%20me%20a%20coffee&message=💓&color=434b57&logo=buy%20me%20a%20coffee&logoColor=white&labelColor=13C3FF)](https://www.ko-fi.com/mberecall)
+<img src="https://img.shields.io/packagist/v/mberecall/ci4-slugify" alt="Latest Stable Version">  <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/mberecall/ci4-slugify"> <a href="https://packagist.org/packages/mberecall/ci4-slugify"><img src="https://img.shields.io/packagist/dt/mberecall/ci4-slugify" alt="Total Downloads"></a>  [![Package License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE) [![Buy me a coffee](https://img.shields.io/static/v1.svg?label=Buy%20me%20a%20coffee&message=💓&color=434b57&logo=buy%20me%20a%20coffee&logoColor=white&labelColor=13C3FF)](https://www.buymeacoffee.com/mberecall)
 
 
 </p>
@@ -10,23 +10,17 @@ Contents
 * [What is a slug?](#background-what-is-a-slug)
 * [Installation](#installation)
 * [Usage](#usage )
-   * [Update modal](#1-update-modal)
-   * [The SlugService Class](#2-the-slugservice-class)
-
-
+  
 
 # Simple Slugify Library for Codeigniter 4
 
 This library provides a way of generating a unique slugs.
 
 <p align="centerx">  
-
- <!-- [![Hello World](img/ko-fi.png)](https://ko-fi.com/mberecall) -->
  <a href="https://www.buymeacoffee.com/mberecall" target="_blank">
- <img src="img/ko-fi.png" alt="drawing" style="width:200px;"/>
+   <img src="img/ko-fi.png" alt="drawing" style="width:200px;"/>
  </a>
-
- </p>
+</p>
 
 ## Background: What is a slug?
 A slug is a simplified version of a string, typically URL-friendly. The act of "slugging" 
@@ -159,8 +153,8 @@ class TestController extends BaseController
 
 ```
 
-### Updating row
-when you are not inserting new record, but you're updating any selected record, you'll need to add extra function on chain `sid()`.
+### Updating record
+when you are not inserting new record, but you're updating any existing record, you'll need to add an extra function on chain which is  `sid()`. Below is an example of how you can generate new slug of selected record.
 ```php
 <?php
 
