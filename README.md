@@ -137,9 +137,9 @@ class TestController extends BaseController
         $slug = SlugService::table('posts')->make($title,'post_slug');
         $slug = SlugService::model(Post::class)->make($title,'post_slug');
 
-        /** When you specify divider/separator for generated slug. default is '-' */
-        $slug = SlugService::table('posts','id')->make($title);
-        $slug = SlugService::model(Post::class,'id')->make($title);
+        /** When you specify table primary key. default is 'id' */
+        $slug = SlugService::table('posts','pid')->make($title);
+        $slug = SlugService::model(Post::class,'pid')->make($title);
     
        /** When you specify divider/separator for generated slug. default is '-' */
         $slug = SlugService::table('posts')->separator('_')->make($title);
