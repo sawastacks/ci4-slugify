@@ -1,13 +1,14 @@
 {
-    "name": "mberecall/ci4-slugify",
+    "name": "mberecall/ci-slugify",
     "description": "Simple Slugify Library for Codeigniter",
-    "homepage": "https://github.com/mberecall/ci4-slugify",
+    "homepage": "https://github.com/mberecall/ci-slugify",
     "type": "library",
     "keywords": [
         "codeigniter4",
         "codeigniter",
         "slugify",
         "ci4 slugify",
+        "ci slugify",
         "slug",
         "codeigniter slug",
         "sluggable"
