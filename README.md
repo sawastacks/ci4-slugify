@@ -1,6 +1,6 @@
 <p align="center">
 
-<img src="https://img.shields.io/packagist/v/mberecall/ci-slugify" alt="Latest Stable Version">  <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/mberecall/ci-slugify"> <a href="https://packagist.org/packages/mberecall/ci-slugify"><img src="https://img.shields.io/packagist/dt/mberecall/ci-slugify" alt="Total Downloads"></a>  [![Package License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE) [![Buy me a coffee](https://img.shields.io/static/v1.svg?label=Buy%20me%20a%20coffee&message=💓&color=434b57&logo=buy%20me%20a%20coffee&logoColor=white&labelColor=13C3FF)](https://www.buymeacoffee.com/mberecall)
+<img src="https://img.shields.io/packagist/v/mberecall/ci4-slugify" alt="Latest Stable Version">  <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/mberecall/ci4-slugify"> <a href="https://packagist.org/packages/mberecall/ci4-slugify"><img src="https://img.shields.io/packagist/dt/mberecall/ci4-slugify" alt="Total Downloads"></a>  [![Package License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE) [![Buy me a coffee](https://img.shields.io/static/v1.svg?label=Buy%20me%20a%20coffee&message=💓&color=434b57&logo=buy%20me%20a%20coffee&logoColor=white&labelColor=13C3FF)](https://www.buymeacoffee.com/mberecall)
 
 
 </p>
@@ -69,7 +69,7 @@ Just run the following command in your cmd or terminal:
 > Install the package via Composer:
 
 ```bash
-composer require mberecall/ci-slugify
+composer require mberecall/ci4-slugify
 ```
 
 
@@ -210,8 +210,8 @@ class TestController extends BaseController
 
 ## Copyright and License
 
-[ci4-slugify](https://github.com/mberecall/ci-slugify)
+[ci4-slugify](https://github.com/mberecall/ci4-slugify)
 was written by [MB'DUSENGE Callixte (mberecall)](https://github.com/mberecall) and is released under the 
 [MIT License](LICENSE.md).
 
-Copyright (c) 2023 MB'DUSENGE Callixte
+Copyright (c) 2023 MB'DUSENGE Callixte🇷🇼
