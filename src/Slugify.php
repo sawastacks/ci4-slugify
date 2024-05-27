@@ -47,7 +47,7 @@ namespace Mberecall\CodeIgniter\Library;
     protected static function getself()
     {
         if (static::$onlyInstance === null) {
-            static::$onlyInstance = new SlugService;
+            static::$onlyInstance = new Slugify;
         }
         return static::$onlyInstance;
     }
