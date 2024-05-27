@@ -1,0 +1,10 @@
+*~
+._*
+_*
+.DS_Store
+node_modules
+composer.lock
+vendor
+build
+*.cache
+ *.bak
