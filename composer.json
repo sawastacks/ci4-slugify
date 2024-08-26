@@ -1,7 +1,7 @@
 {
-    "name": "mberecall/ci4-slugify",
+    "name": "sawastacks/ci4-slugify",
     "description": "Simple Slugify Library for Codeigniter",
-    "homepage": "https://github.com/mberecall/ci4-slugify",
+    "homepage": "https://github.com/sawastacks/ci4-slugify",
     "type": "library",
     "keywords": [
         "codeigniter4",
@@ -14,18 +14,15 @@
     ],
     "license": "MIT",
     "authors": [{
-        "name": "MB'DUSENGE Callixte (mberecall)",
-        "homepage": "https://github.com/mberecall"
+        "name": "Sawa Stacks (sawastacks)",
+        "homepage": "https://github.com/sawastacks"
     }],
     "require": {
         "php": "^7.2 || ^8.0"
     },
     "autoload": {     
         "psr-4": {
-            "Mberecall\\CodeIgniter\\Library\\": "src/"
-        },
-        "files": [
-            "src/lib/SlugService.php"
-        ]
+            "SawaStacks\\CodeIgniter\\": "src/"
+        }
     }
 }

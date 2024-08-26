@@ -1,15 +1,14 @@
 <?php
 
-namespace Mberecall\CodeIgniter\Library;
+namespace SawaStacks\CodeIgniter;
 
 /**
  * A simple unique slugs generator for Codeigniter 4
  * Copyright (c) 2023 - present
- * author: MB'DUSENGE Callixte
- * web : github.com/mberecall
+ * Author: Sawa Stacks
+ * Web : github.com/sawastacks
  * Initial version created on: 23/09/2023
- * MIT license: https://github.com/mberecall/ci4-slugify/blob/master/LICENSE
- * 
+ * MIT license: https://github.com/sawastacks/ci4-slugify/blob/master/LICENSE
  */
 
 
@@ -18,7 +17,7 @@ namespace Mberecall\CodeIgniter\Library;
     /** @var string */
     protected static $table;
 
-     /** @var string */
+    /** @var string */
     protected static $primaryKey;
 
     /** @var string */
@@ -27,11 +26,11 @@ namespace Mberecall\CodeIgniter\Library;
     /** @var string */
     protected static $model;
 
-     /** @var string */
+    /** @var string */
     protected static $onlyInstance;
 
-     /** @var int */
-     protected static $updateTo;
+    /** @var int */
+    protected static $updateTo;
 
     /** @var array */
     protected static $latin = array('á', 'é', 'í', 'ó', 'ú', 'ñ', 'ç', 'ü', 'à', 'è', 'ì', 'ò', 'ù', 'Á', 'É', 'Í', 'Ó', 'Ú', 'Ñ', 'Ç', 'Ü', 'À', 'È', 'Ì', 'Ò', 'Ù');
@@ -180,11 +179,6 @@ namespace Mberecall\CodeIgniter\Library;
         return static::getself();
     }   
 }
-
-
-
-
-
 
 
  ?>

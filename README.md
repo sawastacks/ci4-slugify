@@ -1,6 +1,6 @@
 <p align="center">
 
-<img src="https://img.shields.io/packagist/v/mberecall/ci4-slugify" alt="Latest Stable Version">  <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/mberecall/ci4-slugify"> <a href="https://packagist.org/packages/mberecall/ci4-slugify"><img src="https://img.shields.io/packagist/dt/mberecall/ci4-slugify" alt="Total Downloads"></a>  [![Package License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE) [![Buy me a coffee](https://img.shields.io/static/v1.svg?label=Buy%20me%20a%20coffee&message=💓&color=434b57&logo=buy%20me%20a%20coffee&logoColor=white&labelColor=13C3FF)](https://www.buymeacoffee.com/mberecall)
+<img src="https://img.shields.io/packagist/v/sawastacks/ci4-slugify" alt="Latest Stable Version">  <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/sawastacks/ci4-slugify"> <a href="https://packagist.org/packages/sawastacks/ci4-slugify"><img src="https://img.shields.io/packagist/dt/sawastacks/ci4-slugify" alt="Total Downloads"></a>  [![Package License](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE) [![Buy me a coffee](https://img.shields.io/static/v1.svg?label=Buy%20me%20a%20coffee&message=💓&color=434b57&logo=buy%20me%20a%20coffee&logoColor=white&labelColor=13C3FF)](https://www.buymeacoffee.com/sawastacks)
 
 
 </p>
@@ -17,7 +17,7 @@ Contents
 This library provides a way of generating a unique slugs.
 
 <p align="centerx">  
- <a href="https://www.buymeacoffee.com/mberecall" target="_blank">
+ <a href="https://www.buymeacoffee.com/sawastacks" target="_blank">
    <img src="img/bmc.png" alt="drawing" style="width:200px;"/>
  </a>
 </p>
@@ -69,7 +69,7 @@ Just run the following command in your cmd or terminal:
 > Install the package via Composer:
 
 ```bash
-composer require mberecall/ci4-slugify
+composer require sawastacks/ci4-slugify
 ```
 
 
@@ -80,7 +80,7 @@ After package installed in your Codeigniter project, you have now many ways you 
 
 ### Slugify Class 
 All the logic to generate slugs is handled
-by the `Mberecall\CodeIgniter\Library\Slugify` class.
+by the `SawaStacks\CodeIgniter\Slugify` class.
 
 Generally, you don't need to access this class directly, although there is one 
 static method that can be used to generate a slug for a given string without actually
@@ -93,7 +93,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\Post;
-use Mberecall\CodeIgniter\Library\Slugify;
+use SawaStacks\CodeIgniter\Slugify;
 
 class TestController extends BaseController
 {
@@ -120,7 +120,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\Post;
-use Mberecall\CodeIgniter\Library\Slugify;
+use SawaStacks\CodeIgniter\Slugify;
 
 class TestController extends BaseController
 {
@@ -162,7 +162,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\Post;
-use Mberecall\CodeIgniter\Library\Slugify;
+use SawaStacks\CodeIgniter\Slugify;
 
 class TestController extends BaseController
 {
@@ -181,7 +181,7 @@ class TestController extends BaseController
 
 ## Class reference
 
-### `Mberecall\CodeIgniter\Library\Slugify`
+### `SawaStacks\CodeIgniter\Slugify`
 
 #### `table()` 
 
@@ -210,8 +210,6 @@ class TestController extends BaseController
 
 ## Copyright and License
 
-[ci4-slugify](https://github.com/mberecall/ci4-slugify)
-was written by [MB'DUSENGE Callixte (mberecall)](https://github.com/mberecall) and is released under the 
-[MIT License](LICENSE.md).
+This package was written by [Sawa Stacks](https://github.com/sawastacks) and is released under the [MIT License](LICENSE.md).
 
-Copyright (c) 2023 MB'DUSENGE Callixte🇷🇼
+Copyright (c) 2023 Sawa Stacks.
